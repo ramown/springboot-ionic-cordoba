@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Arrays;
+import java.util.List;
 
 @SpringBootApplication
 public class App implements CommandLineRunner {
@@ -23,7 +24,8 @@ public class App implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Category cat1 = new Category(null, "Informática");
 		Category cat2 = new Category(null, "Escritório");
-		categoryRepository.saveAll(Arrays.asList(cat1, cat2));
+		List<Category> categories = Arrays.asList(cat1, cat2);
+		categoryRepository.saveAll(categories);
 
 	}
 }
